@@ -84,7 +84,7 @@ noremap <c-q> :q<CR>
 " plugs
 call plug#begin('~/.config/nvim')
 
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/nerdtree'
 Plug 'Yggdroot/indentLine'
 Plug 'vim-airline/vim-airline'       
@@ -256,68 +256,68 @@ let g:rainbow_conf = {
 """
 """ coc
 """
-let g:coc_global_extensions = ['coc-json','coc-clangd','coc-clang-format-style-options','coc-cmake','coc-go','coc-golines', 'coc-snippets', 'coc-translator']
-
-" Having longer updatetime (default is 4000 ms = 4s) leads to noticeable
-" delays and poor user experience
-set updatetime=100
-
-set shortmess+=c
-
-set signcolumn=number
-
-inoremap <expr> <Tab> coc#pum#visible() ? coc#pum#confirm() : "\<Tab>"
-
-" Use <c-o> to trigger completion
-if has('nvim')
-  inoremap <silent><expr> <c-o> coc#refresh()
-else
-  inoremap <silent><expr> <c-o> coc#refresh()
-endif
-
-" Use `[g` and `]g` to navigate diagnostics
-" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
-
-" GoTo code navigation
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-
-" Use K to show documentation in preview window
-nnoremap <silent> K :call ShowDocumentation()<CR>
-
-function! ShowDocumentation()
-  if CocAction('hasProvider', 'hover')
-    call CocActionAsync('doHover')
-  else
-    call feedkeys('K', 'in')
-  endif
-endfunction
-
-" Symbol renaming
-nmap <leader>rn <Plug>(coc-rename)
-
-" Highlight the symbol and its references when holding the cursor
-autocmd CursorHold * silent call CocActionAsync('highlight')
-
-" Applying code actions to the selected code block
-" Example: `<leader>aap` for current paragraph
-xmap <leader>a  <Plug>(coc-codeaction-selected)
-nmap <leader>a  <Plug>(coc-codeaction-selected)
-
-" Remap keys for applying code actions at the cursor position
-nmap <leader>ac  <Plug>(coc-codeaction-cursor)
-" Remap keys for apply code actions affect whole buffer
-nmap <leader>as  <Plug>(coc-codeaction-source)
-" Apply the most preferred quickfix action to fix diagnostic on the current line
-nmap <leader>qf  <Plug>(coc-fix-current)
-
-" Run the Code Lens action on the current line
-nmap <leader>cl  <Plug>(coc-codelens-action)
-
-" coc-translator
-nmap <Leader>tr <Plug>(coc-translator-p)
-vmap <Leader>tr <Plug>(coc-translator-pv)
+" let g:coc_global_extensions = ['coc-json','coc-clangd','coc-clang-format-style-options','coc-cmake','coc-go','coc-golines', 'coc-snippets', 'coc-translator']
+"
+" " Having longer updatetime (default is 4000 ms = 4s) leads to noticeable
+" " delays and poor user experience
+" set updatetime=100
+"
+" set shortmess+=c
+"
+" set signcolumn=number
+"
+" inoremap <expr> <Tab> coc#pum#visible() ? coc#pum#confirm() : "\<Tab>"
+"
+" " Use <c-o> to trigger completion
+" if has('nvim')
+"   inoremap <silent><expr> <c-o> coc#refresh()
+" else
+"   inoremap <silent><expr> <c-o> coc#refresh()
+" endif
+"
+" " Use `[g` and `]g` to navigate diagnostics
+" " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list
+" nmap <silent> [g <Plug>(coc-diagnostic-prev)
+" nmap <silent> ]g <Plug>(coc-diagnostic-next)
+"
+" " GoTo code navigation
+" nmap <silent> gd <Plug>(coc-definition)
+" nmap <silent> gy <Plug>(coc-type-definition)
+" nmap <silent> gi <Plug>(coc-implementation)
+" nmap <silent> gr <Plug>(coc-references)
+"
+" " Use K to show documentation in preview window
+" nnoremap <silent> K :call ShowDocumentation()<CR>
+"
+" function! ShowDocumentation()
+"   if CocAction('hasProvider', 'hover')
+"     call CocActionAsync('doHover')
+"   else
+"     call feedkeys('K', 'in')
+"   endif
+" endfunction
+"
+" " Symbol renaming
+" nmap <leader>rn <Plug>(coc-rename)
+"
+" " Highlight the symbol and its references when holding the cursor
+" autocmd CursorHold * silent call CocActionAsync('highlight')
+"
+" " Applying code actions to the selected code block
+" " Example: `<leader>aap` for current paragraph
+" xmap <leader>a  <Plug>(coc-codeaction-selected)
+" nmap <leader>a  <Plug>(coc-codeaction-selected)
+"
+" " Remap keys for applying code actions at the cursor position
+" nmap <leader>ac  <Plug>(coc-codeaction-cursor)
+" " Remap keys for apply code actions affect whole buffer
+" nmap <leader>as  <Plug>(coc-codeaction-source)
+" " Apply the most preferred quickfix action to fix diagnostic on the current line
+" nmap <leader>qf  <Plug>(coc-fix-current)
+"
+" " Run the Code Lens action on the current line
+" nmap <leader>cl  <Plug>(coc-codelens-action)
+"
+" " coc-translator
+" nmap <Leader>tr <Plug>(coc-translator-p)
+" vmap <Leader>tr <Plug>(coc-translator-pv)
