@@ -2,6 +2,9 @@
 
 Include nvim and tmux
 
+- nvim config path: ~/.config/nvim/init.vim 
+- tmux config path: ~/.tmux.conf
+
 
 # 配置终端和vim为真彩色
 
